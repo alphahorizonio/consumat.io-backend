@@ -28,7 +28,7 @@ jobs:
       - name: Test with hydrun
         run: hydrun --extra-args='--network consumatio-backend-testing -e DATABASE_URI=postgresql://consumatio-postgres:consumatio-postgres@consumatio-postgres:5432/consumatio-postgres' './Hydrunfile test'
       - name: Build backend binary with hydrun
-        run: hydrun -a amd64,arm64,arm/v7 './Hydrunfile binary'
+        run: hydrun -a amd64,arm64 './Hydrunfile binary'
       - name: Fix permissions for built binary
         run: sudo chown -R $USER out
       - name: Publish pre-release to GitHub releases
